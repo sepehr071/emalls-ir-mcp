@@ -1,19 +1,19 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.sepehr071/emalls-mcp",
+  "name": "io.github.sepehr071/emalls-ir-mcp",
   "title": "Emalls Price Comparison",
   "description": "Read-only Emalls (emalls.ir) price comparison: products, shop offers, price history, shops.",
   "repository": {
-    "url": "https://github.com/sepehr071/emalls-mcp",
+    "url": "https://github.com/sepehr071/emalls-ir-mcp",
     "source": "github"
   },
-  "websiteUrl": "https://github.com/sepehr071/emalls-mcp",
+  "websiteUrl": "https://github.com/sepehr071/emalls-ir-mcp",
   "version": "0.1.0",
   "packages": [
     {
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
-      "identifier": "emalls-mcp",
+      "identifier": "emalls-ir-mcp",
       "version": "0.1.0",
       "runtimeHint": "uvx",
       "transport": {

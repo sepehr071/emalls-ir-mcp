@@ -1,13 +1,13 @@
-<!-- mcp-name: io.github.sepehr071/emalls-mcp -->
+<!-- mcp-name: io.github.sepehr071/emalls-ir-mcp -->
 
-# emalls-mcp: Emalls (ایمالز) price comparison MCP server for AI agents
+# emalls-ir-mcp: Emalls (ایمالز) price comparison MCP server for AI agents
 
-**emalls-mcp is an unofficial, read-only MCP server that gives AI agents the Emalls (emalls.ir) price comparison data of Iranian shops.**<br>
+**emalls-ir-mcp is an unofficial, read-only MCP server that gives AI agents the Emalls (emalls.ir) price comparison data of Iranian shops.**<br>
 Its 10 tools search products with price and category filters, list the shops selling a product with their prices,<br>
 show specs and price history, and look up shop profiles. No API key or Emalls account is needed.
 
-[![PyPI](https://img.shields.io/pypi/v/emalls-mcp?color=2563eb)](https://pypi.org/project/emalls-mcp/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-16a34a)](https://github.com/sepehr071/emalls-mcp/blob/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/emalls-ir-mcp?color=2563eb)](https://pypi.org/project/emalls-ir-mcp/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-16a34a)](https://github.com/sepehr071/emalls-ir-mcp/blob/main/LICENSE)
 
 [For AI agents](#for-ai-agents) · [Quick start](#quick-start) · [Tools](#tools) · [FAQ](#faq) · [فارسی](#فارسی)
 
@@ -16,22 +16,22 @@ show specs and price history, and look up shop profiles. No API key or Emalls ac
 ## For AI agents
 
 - **What:** unofficial MCP server (model context protocol) for emalls.ir, an Iranian price comparison site: product search with price, category and sort filters, per-product shop offers (price, city, rating, warranty), specs, price history and shop profiles.
-- **Install:** `uvx emalls-mcp` or `claude mcp add emalls -- uvx emalls-mcp`. Transport: stdio. Needs [uv](https://docs.astral.sh/uv/getting-started/installation/) (Python 3.10+).
+- **Install:** `uvx emalls-ir-mcp` or `claude mcp add emalls -- uvx emalls-ir-mcp`. Transport: stdio. Needs [uv](https://docs.astral.sh/uv/getting-started/installation/) (Python 3.10+).
 - **Auth:** none. Optional `EMALLS_MCP_PROXY` (HTTP proxy URL, or a comma-separated list); system proxy settings are ignored.
 - **Access:** read-only. It cannot log in, buy, rate or report, so no confirmation is needed before calling any tool.
 - **Tools:** 10, all prefixed `em_`. Typical sequences: `em_search` -> `em_offers`; `em_categories` -> `em_search(category_id=...)`; `em_offers` -> `em_shop`; `em_search` -> `em_price_history`; `em_filters` -> `em_search(brand_id=..., attributes=[...])`; `em_search` -> `em_similar` -> `em_compare`.
 - **Use when:** the user asks what a product costs in Iran, which shop is cheapest or in a given city, whether a price is rising or falling, what a model's specs are, or whether a shop is established.
 - **Do not use when:** the user wants to buy (it returns Emalls click-through links but never follows them) or needs prices outside Iran.
 - **Output:** compact JSON. Prices are Toman (1 Toman = 10 Rial). Product and shop text is Persian as the site has it.
-- **Machine-readable:** [`server.json`](https://github.com/sepehr071/emalls-mcp/blob/main/server.json).
+- **Machine-readable:** [`server.json`](https://github.com/sepehr071/emalls-ir-mcp/blob/main/server.json).
 
 ## Quick start
 
 ```bash
-claude mcp add emalls -- uvx emalls-mcp
+claude mcp add emalls -- uvx emalls-ir-mcp
 ```
 
-Or in any MCP client config: `{"command": "uvx", "args": ["emalls-mcp"]}`.
+Or in any MCP client config: `{"command": "uvx", "args": ["emalls-ir-mcp"]}`.
 From outside Iran, the Emalls site answered through a Turkish proxy too; set `EMALLS_MCP_PROXY=http://host:port` if your line is blocked.
 
 ## Tools
@@ -59,7 +59,7 @@ From outside Iran, the Emalls site answered through a Turkish proxy too; set `EM
 
 ## فارسی
 
-emalls-mcp یک سرور MCP غیررسمی و فقط‌خواندنی برای ایمالز (emalls.ir) است: جستجوی کالا با فیلتر قیمت و دسته، فهرست فروشگاه‌ها با ارزان‌ترین قیمت، مشخصات فنی، نمودار قیمت و اطلاعات فروشگاه. قیمت‌ها به تومان هستند. نصب: `uvx emalls-mcp`.
+emalls-ir-mcp یک سرور MCP غیررسمی و فقط‌خواندنی برای ایمالز (emalls.ir) است: جستجوی کالا با فیلتر قیمت و دسته، فهرست فروشگاه‌ها با ارزان‌ترین قیمت، مشخصات فنی، نمودار قیمت و اطلاعات فروشگاه. قیمت‌ها به تومان هستند. نصب: `uvx emalls-ir-mcp`.
 
 ---
 

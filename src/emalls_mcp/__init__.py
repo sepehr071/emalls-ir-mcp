@@ -2,4 +2,4 @@
 
 from importlib.metadata import version
 
-__version__ = version("emalls-mcp")
+__version__ = version("emalls-ir-mcp")

@@ -38,5 +38,5 @@ body:
   - type: input
     id: version
     attributes:
-      label: emalls-mcp version
+      label: emalls-ir-mcp version
       placeholder: "0.1.0"

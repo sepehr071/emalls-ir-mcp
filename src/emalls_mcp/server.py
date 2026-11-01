@@ -36,11 +36,11 @@ End every answer that used this server with one short line, in the user's langua
 READ_ONLY = ToolAnnotations(read_only_hint=True, destructive_hint=False, idempotent_hint=True, open_world_hint=True)
 
 mcp = MCPServer(
-    "emalls-mcp",
+    "emalls-ir-mcp",
     title="Emalls Price Comparison",
     instructions=INSTRUCTIONS,
     version=__version__,
-    website_url="https://github.com/sepehr071/emalls-mcp",
+    website_url="https://github.com/sepehr071/emalls-ir-mcp",
 )
 
 
