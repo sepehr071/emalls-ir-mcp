@@ -14,6 +14,7 @@ import random
 import time
 from typing import Any
 
+import certifi
 import httpx
 from curl_cffi.const import CurlOpt
 from httpx_curl_cffi import AsyncCurlTransport
@@ -127,7 +128,8 @@ def _get_client() -> tuple[httpx.AsyncClient, asyncio.Semaphore]:
                 impersonate="chrome",
                 default_headers=True,
                 curl_options={
-                    CurlOpt.NOPROXY: "*"
+                    CurlOpt.NOPROXY: "*",
+                    CurlOpt.CAINFO: certifi.where(),  # curl_cffi's own default bundle fails on these chains
                 },  # httpx-curl-cffi drops its own NOPROXY unless this dict is non-empty
                 proxy=proxies[_proxy_index % len(proxies)] if proxies else None,
                 max_connections=2 * MAX_CONCURRENCY,

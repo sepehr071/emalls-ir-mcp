@@ -1,6 +1,6 @@
 [project]
 name = "emalls-ir-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "Unofficial read-only MCP server for Emalls (emalls.ir), the Iranian price comparison site: products, shop offers, price history."
 readme = "README.md"
 license = "MIT"
@@ -24,6 +24,7 @@ dependencies = [
     "httpx>=0.27",
     "httpx-curl-cffi>=0.1.5",
     "curl-cffi>=0.16.3",
+    "certifi",
 ]
 
 [project.urls]
