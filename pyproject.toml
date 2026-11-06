@@ -1,6 +1,6 @@
 [project]
 name = "emalls-ir-mcp"
-version = "0.1.2"
+version = "0.2.0"
 description = "Unofficial read-only MCP server for Emalls (emalls.ir), the Iranian price comparison site: products, shop offers, price history."
 readme = "README.md"
 license = "MIT"
