@@ -21,7 +21,10 @@ SORTS = {"popular": "vd", "expensive": "pd", "cheapest": "pa", "newest": "dn"}
 LIST = "لیست-قیمت"
 SPEC = "مشخصات"
 
-ProductId = Annotated[int, Field(description="Product id from em_search.", ge=1, le=2_000_000_000)]
+ProductId = Annotated[
+    int,
+    Field(description="Argument is `product_id` (not `id`): the `id` of an em_search result.", ge=1, le=2_000_000_000),
+]
 
 
 def _enc(s: str) -> str:
